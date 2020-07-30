@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from oneapp.views import ShortenView, validate_url
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', ShortenView.as_view(), name='shorten'),
+    # path('success/', success_view, name='success_page'),
     path('ajax/validate_url/', validate_url, name='validate_url'),
 
 ]

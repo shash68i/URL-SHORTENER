@@ -15,6 +15,5 @@ def validate_url(request):
     url = request.GET.get('url', None)
     data = {
         'is_taken': Url.objects.filter(short_url__iexact=url).exists(),
-        'invalid_length': len(url) > 30
     }
     return JsonResponse(data)
