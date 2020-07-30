@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from oneapp.views import ShortenView, validate_url
+from oneapp.views import validate_url, shorten_view, success_view
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', ShortenView.as_view(), name='shorten'),
-    # path('success/', success_view, name='success_page'),
+    path('', shorten_view, name='shorten'),
+    path('success/<slug:data>', success_view, name='success_page'),
     path('ajax/validate_url/', validate_url, name='validate_url'),
 
 ]
