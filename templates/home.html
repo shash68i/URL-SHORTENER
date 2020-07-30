@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit" id="shorten_button">Go for it</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+      $('#short').keyup(function () {
+        var url = $(this).val();
+
+        $.ajax({
+          url: '/ajax/validate_url/',
+          data: {
+            url: url,
+          },
+          dataType: 'json',
+          success: function (data) {
+            if (data.is_taken || data.invalid_length) {
+              $('#shorten_button').attr('disabled', 'disabled');
+            } else {
+              $('#shorten_button').removeAttr('disabled');
+            }
+
+            if (data.is_taken) {
+              alert('A user with this username already exists.');
+            }
+            if (data.invalid_length) {
+              alert('Length greated than 30');
+            }
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
