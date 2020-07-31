@@ -11,7 +11,7 @@ class UrlForm(forms.ModelForm):
         }
         self.fields['original_url'].widget.attrs = {
             'placeholder': 'Enter a long URL to make it short',
-            'id': 'original'
+            'id': 'long'
         }
 
     class Meta:

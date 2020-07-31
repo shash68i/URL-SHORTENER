@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import JsonResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.views.generic.edit import CreateView
 from django.shortcuts import redirect
 from django.urls import reverse
@@ -35,3 +35,9 @@ def validate_url(request):
 
 def success_view(request, data):
     return render(request, 'success.html', {'data': data})
+
+
+def url_redirection_view(request, new_short_url):
+    url = get_object_or_404(Url, short_url=new_short_url)
+    redirection_url = url.original_url
+    return HttpResponseRedirect(redirection_url)
