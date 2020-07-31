@@ -3,20 +3,22 @@ body {
   text-align: center;
 }
 
-#long {
-  width: 30%;
-  height: 30px;
+.container {
+  margin: auto;
+  width: 65%;
+  padding: 10px;
 }
 
+#long,
 #short {
-  width: 30%;
-  height: 30px;
+  width: 65%;
+  height: 40px;
 }
 
 #shorten_button {
   outline: none;
-  width: 30.5%;
-  height: 45px;
+  width: 65%;
+  height: 50px;
   background-color: #40baf5;
   color: #fff;
   border-width: 0;
