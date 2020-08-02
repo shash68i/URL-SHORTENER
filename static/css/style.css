@@ -1,41 +1,65 @@
-body {
-  margin-top: 35vh;
+.container {
+  margin-top: 19vh;
   text-align: center;
+  padding: 10px;
 }
 
-.container {
-  margin: auto;
-  width: 65%;
-  padding: 10px;
+@media (max-width: 1100px) {
+  div.name {
+    position: none;
+    margin: 0;
+    text-align: center;
+  }
+
+  input#short,
+  input#long {
+    width: 90%;
+  }
+
+  button#shorten_button {
+    width: 93%;
+  }
+}
+
+.name {
+  margin-top: 2%;
+  margin-left: 15%;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: 800;
+  font-size: 50px;
+  color: #027c70;
+  letter-spacing: 3px;
 }
 
 #long,
 #short {
-  width: 65%;
+  /* width: 90%; */
+  width: 50%;
   height: 40px;
 }
 
 #shorten_button {
   outline: none;
-  width: 65%;
+  /* width: 92.5%; */
+  width: 51%;
   height: 50px;
-  background-color: #40baf5;
+  background-color: #699df6;
   color: #fff;
   border-width: 0;
   border-radius: 3px;
-  font-family: 'Maven Pro', sans-serif;
-  font-size: large;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
 }
 
 #long[type='text'],
 #short[type='text'] {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #dfdfdf;
+  border: none;
+  border-bottom: 1.5px solid #cfdef6;
   padding-left: 10px;
-  font-family: 'Maven Pro', sans-serif;
-  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
   padding-bottom: 5px;
   transition: all 0.1s ease;
 }
@@ -43,5 +67,6 @@ body {
 #long[type='text']:focus,
 #short[type='text']:focus {
   outline: none;
-  border-bottom: 1.5px solid #40baf5;
+  /* border-bottom: 1.5px solid #40baf5; */
+  border-bottom: 1.5px solid #037e71;
 }
