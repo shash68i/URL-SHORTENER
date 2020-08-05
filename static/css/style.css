@@ -52,6 +52,15 @@
   font-size: 20px;
 }
 
+#shorten_button:hover {
+  cursor: pointer;
+}
+
+#shorten_button:disabled {
+  background-color: #a6c3f6;
+  cursor: auto;
+}
+
 #long[type='text'],
 #short[type='text'] {
   border: none;

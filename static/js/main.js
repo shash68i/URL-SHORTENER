@@ -12,7 +12,7 @@ function validURL(str) {
 }
 
 $('#short').attr('maxlength', '30');
-$('#original').change(function () {
+$('#long').change(function () {
   var long = $(this).val();
   if (!validURL(long)) {
     $('.message-long').empty();
