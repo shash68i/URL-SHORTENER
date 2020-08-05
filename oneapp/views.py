@@ -41,4 +41,3 @@ def url_redirection_view(request, new_short_url):
     url = get_object_or_404(Url, short_url=new_short_url)
     redirection_url = url.original_url
     return HttpResponseRedirect(redirection_url)
-    
