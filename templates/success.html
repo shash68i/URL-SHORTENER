@@ -1,1 +1,15 @@
-{% block success %} {{ data }} {% endblock %}
+{% extends 'base.html' %} {% block success %}
+
+<div class="success-flex">
+  <div class="success-message">
+    <span id="helper-text">Your Custom URL :</span
+    ><span id="myUrl"> https://nanourl.herokuapp.com/{{ data }}</span>
+  </div>
+  <div class="copy">
+    <button class="copy-button" onclick="copyToClipboard('#myUrl')">
+      <i class="fa fa-copy" style="font-size: 50px; color: #027c70;"></i>
+    </button>
+  </div>
+</div>
+
+{% endblock %}

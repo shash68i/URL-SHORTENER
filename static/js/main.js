@@ -16,7 +16,7 @@ $('#long').change(function () {
   var long = $(this).val();
   if (!validURL(long)) {
     $('.message-long').empty();
-    $('.message-long').append('Invalid URL');
+    $('.message-long').append('Please Enter a valid LONG URL!');
   } else {
     $('.message-long').empty();
   }
@@ -38,7 +38,7 @@ $('#short').keyup(function () {
       if (data.is_taken) {
         $('#shorten_button').attr('disabled', 'disabled');
         $('.message-short').empty();
-        $('.message-short').append('A user with this username already exists.');
+        $('.message-short').append('Sorry! Your custom URL is already taken');
       } else {
         $('.message-short').empty();
         $('#shorten_button').removeAttr('disabled');
@@ -46,3 +46,11 @@ $('#short').keyup(function () {
     },
   });
 });
+
+function copyToClipboard(element) {
+  var $temp = $('<input>');
+  $('body').append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand('copy');
+  $temp.remove();
+}
