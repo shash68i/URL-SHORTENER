@@ -1,8 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<div class="messages">
-  <div class="message-long"></div>
-  <div class="message-short"></div>
-</div>
+
 <form method="post">
   {% csrf_token %} {{ form.as_p }}
   <button type="submit" id="shorten_button">
@@ -10,5 +7,9 @@
     <i class="fa fa-chevron-circle-right" style="font-size: 18px;"></i>
   </button>
 </form>
+<div class="messages">
+  <div class="message-long"></div>
+  <div class="message-short"></div>
+</div>
 
 {% endblock %}

@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
 from oneapp.views import (validate_url, shorten_view,
                           success_view, url_redirection_view)
 urlpatterns = [
