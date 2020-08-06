@@ -1,3 +1,7 @@
+body {
+  background-color: ##AFAFA;
+}
+
 .container {
   margin-top: 19vh;
   text-align: center;
@@ -39,6 +43,7 @@
 }
 
 #shorten_button {
+  margin-top: 10px;
   outline: none;
   /* width: 92.5%; */
   width: 51%;

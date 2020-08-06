@@ -1,5 +1,8 @@
 {% extends 'base.html' %} {% block content %}
-
+<div class="messages">
+  <div class="message-long">Please Enter a valid long URL!</div>
+  <div class="message-short">Sorry! Your custom URL is taken</div>
+</div>
 <form method="post">
   {% csrf_token %} {{ form.as_p }}
   <button type="submit" id="shorten_button">
@@ -7,6 +10,5 @@
     <i class="fa fa-chevron-circle-right" style="font-size: 18px;"></i>
   </button>
 </form>
-<div class="message-long"></div>
-<div class="message-short"></div>
+
 {% endblock %}
